@@ -1,0 +1,63 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Clienti.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sterge</h1>
+
+<h3>Sunteti sigur ca doriti sa stergeti clientul?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.prenume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.data_nasterii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.data_nasterii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.ocupatie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.ocupatie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.telefon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.telefon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client.data_inscrierii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.data_inscrierii)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Client.ID" />
+        <input type="submit" value="Sterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Inapoi la lista clientilor</a>
+    </form>
+</div>

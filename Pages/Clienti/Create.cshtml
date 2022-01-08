@@ -1,0 +1,74 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Clienti.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adauga</h1>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Client.CNP" class="control-label"></label>
+                <input asp-for="Client.CNP" class="form-control" />
+                <span asp-validation-for="Client.CNP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.nume" class="control-label"></label>
+                <input asp-for="Client.nume" class="form-control" />
+                <span asp-validation-for="Client.nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.prenume" class="control-label"></label>
+                <input asp-for="Client.prenume" class="form-control" />
+                <span asp-validation-for="Client.prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.data_nasterii" class="control-label"></label>
+                <input asp-for="Client.data_nasterii" class="form-control" />
+                <span asp-validation-for="Client.data_nasterii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.ocupatie" class="control-label"></label>
+                <input asp-for="Client.ocupatie" class="form-control" />
+                <span asp-validation-for="Client.ocupatie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.telefon" class="control-label"></label>
+                <input asp-for="Client.telefon" class="form-control" />
+                <span asp-validation-for="Client.telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.email" class="control-label"></label>
+                <input asp-for="Client.email" class="form-control" />
+                <span asp-validation-for="Client.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client.data_inscrierii" class="control-label"></label>
+                <input asp-for="Client.data_inscrierii" class="form-control" />
+                <span asp-validation-for="Client.data_inscrierii" class="text-danger"></span>
+            </div>
+            <label asp-for="Client.TipClientID" class="control-label">tip client</label>
+            <select asp-for="Client.TipClientID" class="form-control" asp-items="ViewBag.TipClientID">
+            </select>
+            <span asp-validation-for="Client.TipClientID" class="text-danger"></span>
+            <div class="form-group">
+                <input type="submit" value="Adauga" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Inapoi la lista clientilor</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

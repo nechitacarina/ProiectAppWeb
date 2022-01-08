@@ -1,0 +1,52 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Tranzactii.IndexModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+<h1>Tranzactii</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tranzactie[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tranzactie[0].data_tranzactie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tranzactie[0].suma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tranzactie[0].Cont)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tranzactie[0].TipTranzactie.descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tranzactie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem=> item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_tranzactie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.suma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cont.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipTranzactie.descriere)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

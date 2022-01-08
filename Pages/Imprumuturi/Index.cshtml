@@ -1,0 +1,48 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Imprumuturi.IndexModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+<h1>Credite</h1>
+
+<p>
+    <a asp-page="Create">Adauga un nou credit</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Imprumut[0].Cont)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imprumut[0].suma_datorata)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imprumut[0].TipImprumut.descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Imprumut) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cont.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.suma_datorata)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipImprumut.descriere)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Modifica</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Sterge</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

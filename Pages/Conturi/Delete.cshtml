@@ -1,0 +1,45 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Conturi.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sterge</h1>
+
+<h3>Esti sigur ca doresti sa stergi acest cont?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cont.sold)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cont.sold)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cont.data_deschiderii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cont.data_deschiderii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cont.Client)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cont.Client.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cont.TipContBancar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cont.TipContBancar.descriere)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Cont.ID" />
+        <input type="submit" value="Sterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Inapoi la lista conturilor</a>
+    </form>
+</div>

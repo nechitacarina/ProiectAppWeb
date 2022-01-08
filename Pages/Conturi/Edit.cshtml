@@ -1,0 +1,50 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Conturi.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Modifica</h1>
+
+<h4>Cont</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cont.ID" />
+            <div class="form-group">
+                <label asp-for="Cont.sold" class="control-label"></label>
+                <input asp-for="Cont.sold" class="form-control" />
+                <span asp-validation-for="Cont.sold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont.data_deschiderii" class="control-label"></label>
+                <input asp-for="Cont.data_deschiderii" class="form-control" />
+                <span asp-validation-for="Cont.data_deschiderii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont.ClientID" class="control-label"></label>
+                <select asp-for="Cont.ClientID" class="form-control" asp-items="ViewBag.ClientID"></select>
+                <span asp-validation-for="Cont.ClientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cont.TipContBancarID" class="control-label"></label>
+                <select asp-for="Cont.TipContBancarID" class="form-control" asp-items="ViewBag.TipContBancarID"></select>
+                <span asp-validation-for="Cont.TipContBancarID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salveaza modificarile" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Inapoi la lista conturilor</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Conturi.IndexModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+<h1>Conturi</h1>
+
+<p>
+    <a asp-page="Create">Creeaza un nou cont</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont[0].Client.CNP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont[0].sold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont[0].data_deschiderii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cont[0].TipContBancar.descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cont) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.CNP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sold)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_deschiderii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipContBancar.descriere)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Modifica</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Sterge</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

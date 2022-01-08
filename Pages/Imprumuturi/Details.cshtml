@@ -1,0 +1,61 @@
+﻿@page
+@model Nechita_Carina_Proiect.Pages.Imprumuturi.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalii</h1>
+
+<div>
+    <h4>Imprumut</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.data_inceput)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.data_inceput)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.data_final)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.data_final)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.durata)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.durata)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.suma_imprumutata)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.suma_imprumutata)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.suma_datorata)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.suma_datorata)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.Cont)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.Cont.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imprumut.TipImprumut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imprumut.TipImprumut.descriere)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Imprumut.ID">Modifica</a> |
+    <a asp-page="./Index">Inapoi la lista creditelor</a>
+</div>
